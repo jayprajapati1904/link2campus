@@ -1,17 +1,17 @@
 "use client";
 
-import Hero from "@/components/Hero.jsx";
-import ProgramInfo from "@/components/ProgramInfo.jsx";
-import ChoosePath from "@/components/ChoosePath.jsx";
-import WhyShortTerm from "@/components/WhyShortTerm.jsx";
-import WhyChooseL2C from "@/components/WhyChooseL2C.jsx";
-import HowItWorks from "@/components/HowItWorks.jsx";
-import UniversitySection from "@/Components/UniversitySection.jsx";
-import ContactForm from "@/Components/ContactForm.jsx";
-import Footer from "@/Components/Footer.jsx";
+import Hero from "@/Components/Hero";
+import ProgramInfo from "@/Components/ProgramInfo";
+import ChoosePath from "@/Components/ChoosePath";
+import WhyShortTerm from "@/Components/WhyShortTerm";
+import WhyChooseL2C from "@/Components/WhyChooseL2C";
+import HowItWorks from "@/Components/HowItWorks";
+import UniversitySection from "@/Components/UniversitySection";
+import ContactForm from "@/Components/ContactForm";
+import Footer from "@/Components/Footer";
 import useAuthStore from "@/Store/useAuthStore.js";
-import Auth from "@/pages/Auth.jsx";
-import Dashboard from "@/pages/Dashboard.jsx";
+import Auth from "@/pages/Auth";
+import Dashboard from "@/pages/Dashboard";
 
 export default function Home() {
   const user = useAuthStore((state) => state.user);
