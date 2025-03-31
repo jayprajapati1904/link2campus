@@ -5,6 +5,8 @@ import { DownloadOutlined, SearchOutlined } from "@ant-design/icons";
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import { unstableSetRender } from "antd";
+import { createRoot } from "react-dom/client";
 
 const Dashboard = () => {
   const { users, fetchUsers } = useUserStore();
@@ -13,6 +15,16 @@ const Dashboard = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+
+  unstableSetRender((node, container) => {
+    container._reactRoot ||= createRoot(container);
+    const root = container._reactRoot;
+    root.render(node);
+    return async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      root.unmount();
+    };
+  });
 
   const handleSearch = (e) => setSearch(e.target.value);
 
